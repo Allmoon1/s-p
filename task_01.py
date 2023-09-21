@@ -1,7 +1,6 @@
 def is_palindrome(string):
-    s = ''.join(c for c in str(string) if c.isalnum()).lower()
-    return s == s[::-1]
-
+    reworked_string = ''.join(char for char in str(string) if char.isalnum()).lower()
+    return reworked_string == reworked_string[::-1]
 
 print(is_palindrome("A man, a plan, a canal -- Panama")) # => True
 print(is_palindrome("Madam, I'm Adam!")) # => True
