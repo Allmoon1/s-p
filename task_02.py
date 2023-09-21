@@ -1,7 +1,3 @@
-#class range(object):
-#    def __init__(self, a, b):
-#        self.coord = (a, b)
-
 def coincidence(list = [], range = None):
      result = []
      if (len(list) == 0) or (range is None):
