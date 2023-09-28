@@ -1,32 +1,48 @@
 class Dessert:
     def __init__(self, name="", calories=0):
-        self._name = name
-        self._calories = calories
+        self.__name = name
+        self.__calories = calories
 
-    def get_name(self):
-        return self._name
+    def name(self):
+        return self.__name
 
-    def set_name(self, new_name):
-        self._name = new_name
+    def name(self, new_name):
+        self.__name = new_name
 
-    def get_calories(self):
-        return self._calories
+    def calories(self):
+        return self.__calories
 
-    def set_calories(self, new_calories):
-        self._calories = new_calories
+    def calories(self, new_calories):
+        self.__calories = new_calories
 
     def is_healthy(self):
-        return self._calories < 200
+        if self.calories < 200:
+            return True
+        return False
 
     def is_delicious(self):
         return True
 
 
-#dessert1 = Dessert("Jam", 1350)
-#dessert2 = Dessert("Salad", 150)
 
-#print("Is Dessert 1 healthy?", dessert1.is_healthy())
-#print("Is Dessert 1 delicious?", dessert1.is_delicious())
 
-#print("Is Dessert 2 healthy?", dessert2.is_healthy())
-#print("Is Dessert 2 delicious?", dessert2.is_delicious())
+
+dessert = Dessert()
+dessert.name = "test_name"
+print(dessert.name)
+dessert.name = "test_name2"
+print(dessert.name)
+if dessert.name != "test_name2": raise Exception("Setter for name is not working")
+dessert.calories = "test_calories"
+print(dessert.calories)
+dessert.calories = "test_calories2"
+print(dessert.calories)
+if dessert.calories != "test_calories2": raise Exception("Setter for calories is not working")
+print(dessert.is_delicious())
+if not dessert.is_delicious(): raise Exception("Invalid method result")
+print(dessert.is_healthy())
+dessert.calories = 300
+print(dessert.calories)
+print(dessert.is_healthy())
+if dessert.is_healthy(): raise Exception("Logical error. Method must return False")
+

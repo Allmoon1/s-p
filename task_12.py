@@ -22,7 +22,7 @@ class Dessert:
         return True
 
 class JellyBean(Dessert):
-    def __init__(self, name, calories, flavor=None):
+    def __init__(self, name = None, calories = None, flavor=None):
         super().__init__(name, calories)
         self._flavor = flavor
 
