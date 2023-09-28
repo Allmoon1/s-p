@@ -14,7 +14,6 @@ def combine_anagrams(array):
         collection = []
         for i in index:
             collection.append(array[i])
-        #collection = tuple(array[i] for i in index)
         if len(collection) >= 1:
             anagrams.append(collection)
  
