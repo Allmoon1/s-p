@@ -1,22 +1,24 @@
 class Dessert:
     def __init__(self, name="", calories=0):
-        self._name = name
-        self._calories = calories
+        self.__name = name
+        self.__calories = calories
 
-    def get_name(self):
-        return self._name
+    def name(self):
+        return self.__name
 
-    def set_name(self, new_name):
-        self._name = new_name
+    def name(self, new_name):
+        self.__name = new_name
 
-    def get_calories(self):
-        return self._calories
+    def calories(self):
+        return self.__calories
 
-    def set_calories(self, new_calories):
-        self._calories = new_calories
+    def calories(self, new_calories):
+        self.__calories = new_calories
 
     def is_healthy(self):
-        return self._calories < 200
+        if type(self.calories) == str or self.calories < 200:
+            return True
+        return False
 
     def is_delicious(self):
         return True
@@ -24,18 +26,18 @@ class Dessert:
 class JellyBean(Dessert):
     def __init__(self, name = None, calories = None, flavor=None):
         super().__init__(name, calories)
-        self._flavor = flavor
+        self.__flavor = flavor
 
     @property
     def flavor(self):
-        return self._flavor
+        return self.__flavor
 
     @flavor.setter
     def flavor(self, value):
-        self._flavor = value
+        self.__flavor = value
 
     def is_delicious(self):
-        return self._flavor != "black licorice"
+        return self.__flavor != "black licorice"
 
 
 #jelly_bean = JellyBean("Cherry Jelly Bean", 20, "cherry")
